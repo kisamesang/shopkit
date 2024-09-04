@@ -1,0 +1,175 @@
+
+body{
+  font-family: "Prompt";
+}
+
+.zoom-icon {
+  display: inline-block; /* ใช้ display inline-block เพื่อให้การซูมทำงานได้ */
+  animation: zoomInOut 3s infinite; /* ใช้แอนิเมชันซูมเข้าและออก */
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1); /* ขนาดเริ่มต้น */
+  }
+  50% {
+    transform: scale(1.2); /* ขยายขึ้น 1.2 เท่า */
+  }
+  100% {
+    transform: scale(1); /* ขนาดกลับสู่เริ่มต้น */
+  }
+}
+
+
+.animated-text {
+  display: inline-block;
+  animation: fadeInUp 2s ease-out, bounceIn 1s ease-out; /* ใช้แอนิเมชันหลายตัว */
+}
+
+/* เอฟเฟกต์การเฟดอินและยกขึ้น */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* เริ่มต้นจากตำแหน่งที่ต่ำกว่า */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* กลับไปที่ตำแหน่งเริ่มต้น */
+  }
+}
+
+/* เอฟเฟกต์การเด้ง */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------------------------------------------------- */
+.typing-effect {
+  overflow: hidden; /* ซ่อนข้อความที่เกิน */
+  border-right: .15em solid orange; /* ใส่เส้นสีส้มที่ขอบขวา */
+  white-space: nowrap; /* ไม่ให้ข้อความขึ้นบรรทัดใหม่ */
+  animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/* -------------------------------------------------------------------------- */
+  
+  /*
+   * Custom translucent site header
+   */
+  
+  .site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: #8e8e8e;
+    transition: color .15s ease-in-out;
+  }
+  .site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+  
+  .product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(30deg);
+  }
+  
+  .product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+  }
+  
+  .product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #e5e5e5;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      flex: 1;
+    }
+  }
+  /* Hover------------------------------------------------------------------------------- */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลงในแอนิเมชัน */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* ขยายขนาดการ์ด */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเพื่อให้การ์ดดูลอยออกมาจากพื้น */
+  }
+  
+  .card img {
+    transition: opacity 0.3s ease; /* เพิ่มการเปลี่ยนแปลงความโปร่งใสของรูปภาพ */
+  }
+  
+  .card:hover img {
+    opacity: 0.8; /* ทำให้รูปภาพโปร่งใสน้อยลงเมื่อ hover */
+  }
+  
+  .card h3 {
+    transition: color 0.3s ease; /* เพิ่มการเปลี่ยนแปลงสีของข้อความ */
+  }
+  
+  .card:hover h3 {
+    color: #ffcc00; /* เปลี่ยนสีข้อความเมื่อ hover */
+  }
+  
+  .card ul li {
+    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงตำแหน่งของรายการ */
+  }
+  
+  .card:hover ul li {
+    transform: translateY(-5px); /* ยกตำแหน่งของรายการขึ้นเล็กน้อยเมื่อ hover */
+  }
+  
